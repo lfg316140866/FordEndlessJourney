@@ -1,0 +1,63 @@
+/*******************************************************************************************************
+* DateTime: 2015-05-29 12:54:10		IP: 114.83.137.136Brower: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.2 Safari/537.36
+* Url : http://fordendlessjourneypc.nn.cagoe.com/Itf/Php/Itf.php?method=InsertPcEnrollment
+execSql报错
+insert into  usr_enrollment (name,phone,province_id,city_id,owners,source) values('dd','dd','34','undefined','1','1') 
+-------------
+Incorrect integer value: 'undefined' for column 'city_id' at row 1
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015-05-29 12:54:17		IP: 114.83.137.136Brower: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.2 Safari/537.36
+* Url : http://fordendlessjourneypc.nn.cagoe.com/Itf/Php/Itf.php?method=InsertPcEnrollment
+execSql报错
+insert into  usr_enrollment (name,phone,province_id,city_id,owners,source) values('dd','13277916303','34','undefined','1','1') 
+-------------
+Incorrect integer value: 'undefined' for column 'city_id' at row 1
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015-05-29 12:55:39		IP: 114.83.137.136Brower: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.2 Safari/537.36
+* Url : http://fordendlessjourneypc.nn.cagoe.com/Itf/Php/Itf.php?method=InsertPcEnrollment
+execSql报错
+insert into  usr_enrollment (name,phone,province_id,city_id,owners,source) values('sd','13277916303','33','undefined','1','1') 
+-------------
+Incorrect integer value: 'undefined' for column 'city_id' at row 1
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015-05-29 12:56:33		IP: 114.83.137.136Brower: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.2 Safari/537.36
+* Url : http://fordendlessjourneypc.nn.cagoe.com/Itf/Php/Itf.php?method=InsertPcEnrollment
+execSql报错
+insert into  usr_enrollment (name,phone,province_id,city_id,owners,source) values('sd','13277916303','33','undefined','1','1') 
+-------------
+Incorrect integer value: 'undefined' for column 'city_id' at row 1
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015-05-29 12:56:40		IP: 114.83.137.136Brower: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.2 Safari/537.36
+* Url : http://fordendlessjourneypc.nn.cagoe.com/Itf/Php/Itf.php?method=InsertPcEnrollment
+execSql报错
+insert into  usr_enrollment (name,phone,province_id,city_id,owners,source) values('sd','13277916303','33','undefined','1','1') 
+-------------
+Incorrect integer value: 'undefined' for column 'city_id' at row 1
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015-05-29 12:59:18		IP: 114.83.137.136Brower: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.2 Safari/537.36
+* Url : http://fordendlessjourneypc.nn.cagoe.com/Itf/Php/AjaxItf.php?method=GetSqlData&ItfName=GetCity
+getFieldValue报错
+select count(1) from bas_city where province_id=
+-------------
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015-05-29 12:59:18		IP: 114.83.137.136Brower: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.2 Safari/537.36
+* Url : http://fordendlessjourneypc.nn.cagoe.com/Itf/Php/AjaxItf.php?method=GetSqlData&ItfName=GetCity
+getResultSet错误
+select city_id,city_desc from bas_city where province_id= order by city_id desc
+-------------
+错误号：1064错误信息：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by city_id desc' at line 1
+*******************************************************************************************************/
+

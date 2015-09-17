@@ -1,0 +1,615 @@
+@charset "utf-8";
+@import "tobe/base";   //引入sass的tade模块
+@import "user/custom";    //引入设计者自定义模块
+@import "user/variables";
+@import "compass/typography";  //引入compasss五大模块
+@import "compass/css3";
+@import "compass/layout";
+@import "compass/support";
+@import "tobe/ext/animate/bounce";//引入动画模块
+@import "tobe/ext/animate/flip";
+@import "tobe/ext/animate/zoom";
+
+// @import "compass/helpers";
+// @import "compass/tilities";
+//注释掉font-face
+//$fontClassoutput: glass music search times weibo;
+//@import "D:/tobe/ext/font-face/font-face";
+//@import "D:/tobe/ext/font-face/variables";
+/* CSS Document */
+// /*********
+// 可能会用到的样式
+// filter:alpha(opacity=50);opacity:0.5;
+// width:0px;height:0px;border-width:10px 7px 0 7px; border-color: #ccc transparent transparent transparent;
+// box-shadow:2px -1px 6px #eaeaea;behavior: url(PIE_uncompressed.htc);
+// */
+//@include clearfix;
+//@extend %pagebtn;
+
+//定义浏览器的兼容最低版本
+$browser-minimum-versions:("ie":"8");
+/*-------------------------------------css--------------------------------------------*/
+html{overflow-x:hidden;}
+html,body,.Wrap,.Main{@extend %wh100; font-size:12px;font-family:"Microsoft Yahei";}
+body{width:$Width;@extend %center-block;height:$Height;overflow: hidden;}
+a{@extend %wh100;display: block;}
+.Wrap{@include position();}
+.Main{@include position();}
+.Position{position:absolute;}
+.PublicScenes{@include position();display:none;@extend %wh100;overflow:hidden;}
+/*各场景背景*/
+.Bg{@extend %wh100;@include position();overflow:hidden;min-width:$wrapWidth;}
+.Bg img{width:$Width;min-width:$wrapWidth;height:$Height;}
+.PublicScenes .Bg img{position:relative;}
+.Inner{min-width:$wrapWidth;@extend %center-block; position:relative;height:$Height;width:$Width;}
+
+
+/************************************历届回顾*********************************************/
+/*******************历届回顾首页************************/
+.box_img img{width:$Width;}
+.history_btn{@include horizontal-center(80%,6%);}
+.history_tip{@extend .activity_btn;}
+.history_des{@include horizontal-center(26%,53.5%);}
+.des_btn{@include horizontal-center(69%,10.5%);}
+/*******************历届回顾视频************************/
+.history_vedtip{@include position(20.5%,24.5%);width:9%;}
+.video_buttn{@extend .history_btn;}
+.map_box{@include position(22.5%,21%);width:57%;
+  .map_1{display:block;}
+  .map_2{display:none;}
+}
+.year_box{width: 129px;height: 200px;@include position(42.5%,65.5%);
+  .year_bar{
+    a{background:image-url('button-sc2838bb7f8.png') no-repeat;}
+  }
+  .year_2013 a{background-position:0px 0px;width:101px;height:32px;}
+  .year_2014 a{background-position:-246px 0px;width:101px;height:32px;}
+  .year_2013.year_set a{background-position:-109px 0px;width:129px;height:37px;}
+  .year_2014.year_set a{background-position:-355px 0px;width:129px;height:37px;}
+}
+/*******************历届回顾图片************************/
+.video_photo{@include horizontal-center(34%,50%);}
+.video_introduction{@extend .history_vedtip;}
+.picture_btn{@extend .history_btn;}
+
+/*******************历届回顾攻略************************/
+.strategy_box{height:38%;@include horizontal-center(30.5%,50%);
+  .strategy_bar{height:$Height;width:$Width;  position: relative;  overflow: hidden;
+    .strategy_nav{@include legacy-pie-clearfix();height:$Height;width:$Width;  position: relative;  overflow: hidden;
+      li{@include float();width:33.3%;
+        a{height:$Height;width:$Width;
+          img{height:$Height;width:$Width;}
+        }
+      }
+    }
+  }
+  .strategy_left_arrow{@include vertically-center(-7%,67px);}
+  .strategy_right_arrow{@include vertically-center(102%,67px);}
+}
+.retrun_btn{@include position(75%,76.6%);width:1.7%;}
+.strategy_tip{@include horizontal-center(74%,50%);}
+.strategy_2014btn{@include position(77.5%,51%);width:10.5%;}
+.strategy_2013btn{@include position(77.5%,39%);width:10.5%;}
+.strategy_title{@include horizontal-center(18.5%,50%);}
+
+/************************************私房路线*********************************************/
+.route_tip{@extend .activity_btn;left: 5%!important;}
+.route_con{@include horizontal-vertically-center(900px,450px);background:image-url('route_con_bg.png') no-repeat;overflow: hidden;margin-left: -400px;
+   .route_set{@include position(20px,55px);background:image-url('city_bg.png') no-repeat;width: 284px;height: 69px;z-index: 10;
+        .route_menu{@include position(20px,90px);width: 176px;height: auto;
+           p{@include font-style(12px,$Color-Blue,null);width: 161px;height: 28px;cursor: pointer;line-height: 28px;padding-left: 10px;}
+           .route_sidebar{width: 176px; @include position(30px);  background:$Color-White; display: none;height: 210px;overflow-x: hidden;overflow-y: auto;    
+              .route_nav{width: $Width;
+                li.not_selected a{color:$Color-Black;cursor:default;
+                     &:hover{color:$Color-Black;background: none;}
+                }
+                li{width: $Width;height: 28px;line-height: 28px;
+                  a{@include font-style(12px,$Color-Blue,null);line-height: 28px;padding-left: 5px;
+                     &:hover{background: $Color-Blue;color:$Color-White;width: 161px;}
+                  }
+                }
+              }
+           }
+        }
+   }
+   .route_bar{width: 760px;height: 310px;@include position(120px,85px);overflow: hidden;
+      img{width: $Width;display: none;}
+      .station_img1{display: block;}
+   }
+   .select_btn{@extend %clearfix;width: 254px;@include position(67px,570px);height: 35px;
+       a{background:image-url('btn-scb9c9c5ce4.png') no-repeat;}
+       .content_btn{@include float();width: 50%;height: $Height;
+          a{background-position:0px 0px;
+              &:hover{background-position:-135px 0px;@include opacity(0.6);}
+          }
+       }
+       .content_btn.update{
+          a{background-position:-135px 0px;}
+       }
+       .book_btn{@include float(right);width: 50%;height: $Height;
+          a{background-position:-270px 0px;
+              &:hover{background-position:-405px 0px;@include opacity(0.6);}
+          }
+       }
+       .book_btn.update{
+          a{background-position:-405px 0px;}
+       }
+   }
+}
+
+.route_con .route_set.select{background:image-url('city_bg2.png') no-repeat;}
+/************************************首页*********************************************/
+.tip{@include position(5%,10%);width: 36%;
+  // @include animate-bounceIn();
+  // @include animation(bounceIn 1500ms 500ms linear 1 both);
+   img{width:$Width;}
+}
+.title{@include position(70%,18%);width: 26%;
+  // @include animate-bounceIn();
+  // @include animation(bounceIn 1500ms 500ms linear 1 both);
+   img{width:$Width;}
+}
+
+
+
+
+/************************************路线介绍*********************************************/
+.route_introduction_tip{@extend .activity_btn;}
+.route_box{@include horizontal-center(15%,477px);height: 75px;z-index: 10;
+     & .route_subnav{width:477px;@include legacy-pie-clearfix();@include horizontal-list(false);
+        & li{width: 142px;height: 75px;margin-right: 17px;
+             & a{background:image-url('star-sa022d95528.png') no-repeat; @include hide-text;}
+           }         
+     }
+}
+.route_subnav li a:hover{@include prefixer(transition,all 0.35s 0.1s);}
+
+//循环顶部导航hover效果后背景图片定位
+@for $i from 1 through 3{
+  .route_subnav li.route_btn#{$i} a{
+    background-position:0px (-166+$i*166px)*(-1);
+        &:hover{
+           background-position:0px (-83+$i*166px)*(-1);
+        } 
+    }
+  }
+
+@for $i from 1 through 3{
+  .route_subnav li.route_btn#{$i}.route_set a{
+        background-position:0px (-83+$i*166px)*(-1);
+  }
+}
+       .two_star_text{@include position(0%,-10%);width: 41%;
+             img{width: 77%;}
+          }
+.route_item{width:$Width;height: 45%;@include position(28%);@include transparent-background(0.5);
+     .routeing_bar{@include horizontal-center(6%,48%);z-index: 10;height:$Height;
+        }
+          .two_star_box{display: block;@include horizontal-center(0px,584px);height:$Height; background:image-url('two_star_bg.png') no-repeat;width: 585px;height: 344px;margin-left: -305px;
+          .pub_provinces{
+            a{@include font-style(10px,$Color-White,null,600);/*@include prefixer(transform,scale(0.8));*/height:$Height;width:$Width;
+                &:hover{color:$Color-Blue;}
+            }
+          }
+          .provinces_big{text-align: center; display: table;width: 41px;height: 35px;
+            a{vertical-align: middle;display: table-cell;}
+          }
+  
+          .activity_provinces1{@include position(55%,64%);width: 29px;}
+          .activity_provinces2{@include position(55%,56%);        }
+          .activity_provinces3{@include position(41%,58%);height: 25px;}
+          .activity_provinces4{@include position(48%,58%);height: 25px;}
+          .activity_provinces5{@include position(66%,25%);}
+          .activity_provinces6{@include position(52%,71.5%);width: 36px;height: 20px;}
+          .activity_provinces7{@include position(63%,36%);width: 64px;}
+          .activity_provinces8{@include position(33%,81%);}
+          .activity_provinces9{@include position(49%,38%);width: 64px;}
+          .activity_provinces10{@include position(44%,84%);}
+          .activity_provinces11{@include position(43%,50.5%);height: 15px;}
+          .activity_provinces12{@include position(36%,26%); width: 85px;}
+          .activity_provinces13{@include position(18.5%,43%);}
+          .activity_provinces14{@include position(26.5%,47%);width: 83px;height: 20px;}
+          .activity_provinces15{@include position(24%,69%);width: 61px;height: 20px;}
+          .activity_provinces16{@include position(40%,77%);}
+          .activity_provinces17{@include position(19.5%,77%);width: 36px;height: 20px;}
+          .activity_provinces18{@include position(8%,74%);width: 81px;}
+          .activity_provinces19{@include position(33%,62%);}
+          .activity_provinces20{@include position(57%,47%);}
+          .activity_provinces21{@include position(63.5%,52%);height: 35px;}
+          .activity_provinces22{@include position(66%,61%);}
+          .activity_provinces23{@include position(40%,44%);width: 37px;height: 22px;}
+          .activity_provinces24{@include position(59.5%,68.5%);width: 30px;height: 22px;}
+          .activity_provinces25{@include position(26%,85%);}
+          .activity_provinces26{@include position(46%,67%);width: 27px;height: 25px;}
+          .provinces_pop{@include position(24%,91%);width: 102px;height: 117px;
+              .pub_provinces_pop{display:none;}
+          }
+
+        }
+        & .three_star_box{display: none;@include horizontal-center(-10px,65%);height:$Height;  margin-left: -40.5%;
+        }
+        & .four_star_box{display: none;@include horizontal-center(-15px,65%);height:$Height;margin-left: -40.5%;
+        }
+        .activity_city{@include position(4%,-5%);z-index: 10;
+          a{text-decoration:underline;@include font-style(23px,$Color-Blue,null,600);}
+    }
+}
+.web_bg{@include position(35px);
+   img{width:$Width;}
+}
+.box_bg{@include position();
+  img{width:$Width;}
+}
+.guide_box{ @include position(70%,23%);width: 49%;
+    & .two_star_guide{display: block;}
+    & .three_star_guide{display: none;}
+    & .four_star_guide{display: none;}
+}
+.guide_box img{width:$Width;}
+.pub_hover{height: 5%;width: 5%;cursor:pointer;background: image-url('transparent_bg.png') repeat;}
+.pub_hover:hover .provinces_img{display: none;}
+.pub_hover .provinces_photo{display: none;}
+.pub_hover:hover .provinces_photo{display: block;z-index: 100;}
+
+
+.out_hover1{position: absolute;top: 45%;left: 35%;
+         .provinces_text_1{position: absolute;top: -25px;left: 0px;}
+         .provinces_img_1{position: absolute;top: -63px;left:-334px;}
+   }     
+.out_hover2{position: absolute;top: 0%;left: 89%;
+            .provinces_text_2{position: absolute;top: 3px;left: -64px;}
+            .provinces_img_2{position: absolute;top: 2px;left:-87px;}
+}  
+.out_hover3{position: absolute;top: 12%;left: 76%;
+            .provinces_text_3{position: absolute;top: -8px;left: -28px;}
+            .provinces_img_3{position: absolute;top: -13px;left:-44px;}
+   }    
+.out_hover4{position: absolute;top: 19%;left: 76%;
+         .provinces_text_4{position: absolute;top: -3px;left: 22px;}
+         .provinces_img_4{position: absolute;top: -23px;left:-88px;}
+    } 
+.out_hover5{position: absolute;top: 24%;left: 57%;
+         .provinces_text_5{position: absolute;top: 0px;left: -30px;}
+         .provinces_img_5{position: absolute;top: -72px;left:-368px;}
+    }   
+.out_hover6{position: absolute;top: 28%;left: 85%;
+         .provinces_text_6{position: absolute;top: -4px;left: 25px;}
+         .provinces_img_6{position: absolute;top: -72px;left:9px;}
+    } 
+.out_hover7{position: absolute;top: 34%;left: 72%;height: 8%;
+        .provinces_text_7{position: absolute;top: 2px;left: -34px;}
+        .provinces_img_7{position: absolute;top: -38px;left:7px;}
+    }   
+ .out_hover8{position: absolute;top: 41%;left: 85%;width: 5%;height: 5%;
+        .provinces_text_8{position: absolute;top: 2px;left: -34px;}
+        .provinces_img_8{position: absolute;top: -65px;left:-52px;}
+    }   
+.out_hover9{position: absolute;top: 46%;left: 91%;width: 5%;height: 5%;
+         .provinces_text_9{position: absolute;top: -11px;left: 22px;}
+         .provinces_img_9{position: absolute;top: -66px;left:-46px;}
+    }    
+.out_hover10{position: absolute;top: 50%;left: 95%;width: 5%;height: 5%;
+         .provinces_text_10{position: absolute;top: 0px;left: 25px;}
+         .provinces_img_10{position: absolute;top: -66px;left:8px;}
+             }  
+.out_hover11{position: absolute;top: 62%;left: 84%;height: 10%;
+         .provinces_text_11{position: absolute;top: 8px;left: 15px;}
+         .provinces_img_11{position: absolute;top: -25px;left:2px;}
+    }  
+.out_hover12{position: absolute;top: 66%;left: 69%;height: 10%;
+         .provinces_text_12{position: absolute;top: -20px;left: 0px;}
+         .provinces_img_12{position: absolute;top: -40px;left:-16px;}
+    }  
+.out_hover13{position: absolute;top: 70%;left: 57%;height: 8%;
+         .provinces_text_13{position: absolute;top: -17px;left: 3px;}
+          .provinces_img_13{position: absolute;top: -33px;left:-409px;}
+    }    
+.out_hover14{position: absolute;top: 65%;left: 45%;height: 8%;
+         .provinces_text_14{position: absolute;top: -20px;left: 25px;}
+         .provinces_img_14{position: absolute;top: -40px;left:-530px;}
+   } 
+.out_hover15{position: absolute;top: 59%;left: 36%;height: 8%;
+         .provinces_text_15{position: absolute;top: -2px;left: -30px;}
+         .provinces_img_15{position: absolute;top: -66px;left:-366px;}
+    }     
+.out_hover16{position: absolute;top: 50%;left: 44%;height: 8%;
+         .provinces_text_16{position: absolute;top: -6px;left: 27px;}
+         .provinces_img_16{position: absolute;top: -45px;left:-435px;}
+    }    
+.out_hover17{position: absolute;top: 19%;left: 6%;
+         .provinces_text_17{position: absolute;top: -18px;left: -15px;}
+         .provinces_img_17{position: absolute;top: -66px;left: -45px;}
+    }     
+.out_hover18{position: absolute;top: 31%;left: 0;
+         .provinces_text_18{position: absolute;top: 16px;left: -16px;}
+         .provinces_img_18{position: absolute;top: -5px;left: -20px;}
+    }    
+.out_hover19{position: absolute;top: 25%;left: 10.5%;
+         .provinces_text_19{position: absolute;top: 0px;left: 30px;}
+         .provinces_img_19{position: absolute;top: -63px;left:10px;}
+    } 
+
+/************************************活动介绍*********************************************/
+.activity_box{@extend %clearfix;@include horizontal-center(34%,1180px);
+     & .video_btn{@include float();width: 356px;height: 262px;margin-left: 60px;
+        & img{width: 356px;}
+     }
+     & .activity_con{@include float(right);width:700px;padding-right: 50px;    	 
+     	 & .activity_bar{	
+     	 }   	 
+         & .activity_date{margin: 15px 0px;}
+     }
+     p{@include font-style(16px,$Color-White,null);}
+}
+.activity_btn{@include position(14%,10%);}
+
+
+
+
+/************************************马上报名*********************************************/
+.inf_tip{@extend .activity_btn;z-index: 10;}
+.inf_box{@include horizontal-center(25%,782px);
+     & .inf_item{width:$Width;height: 196px;background: image-url('inf_bg.png') no-repeat; margin-bottom: 10px;
+        & .inf_form{position: relative;width:$Width;height:$Height;
+           & .pub_select{overflow: hidden;width: 193px;@include position(92px,142px);height: 36px;
+		           & .pub_int{@extend %select;@include form-box(18px,36px,20px,#000);padding-right: 42px;font-family:"Microsoft Yahei";}
+           }
+           & .city_select{left: 416px;}
+           & .province_select{}
+           & .pub_inp{@include position(34px,144px);@include form-box(18px,36px,20px,#000);width: 192px; font-family:"Microsoft Yahei";}
+		   & .userphone{left: 418px;}
+           & .submit_btn{@include horizontal-center(165px,292px);}
+        }
+     }
+
+     & .inf_bar{width:$Width;position: relative;margin-left: 28px;
+         .inf_events_btn{@include position(122px);width: 82px;height: 22px;}
+         .code_img{@include position(100px,278px);
+             img{width: 89px;}
+         }
+     }
+}
+
+
+
+
+
+/************************************GFX精神*********************************************/
+.gfx_mind_tip{@include position(14%,5%);z-index: 100;}
+.mind_box{width:$Width;height: $Height;@include position();
+   .mind_item{width:$Width;height: $Height;position: relative;
+   }
+}
+.left_arrow{@include vertically-center(22%,82px);z-index: 10;}
+.right_arrow{@include vertically-center(76%,82px);z-index: 10;}
+
+
+.mind_nav{height: $Width;position: relative;left: -53%;}
+.shadow_bar{overflow: hidden;height: $Height;width: 78.55%;@include position();}
+
+//定位每张图片的位置
+@for $i from 1 through 6{
+  .shadow_bar#{$i}{
+      left:(-63+$i*63%);
+  }
+}
+.shadow_bar img{width:$Width;height: $Height;}
+.shadow_box{width:$Width;height: $Height;@include position(-1px);z-index: 2;}
+//****************************************公共部分
+/*********************整站logo************************/
+.logo{@include position(15px,30px);z-index: 10;}
+
+
+/*********************导航************************/
+.nav_sidemenu{width: 111px;height: auto;@include position(33%);z-index: 10;}
+.nav_box{width:$Width;}
+.nav_bar{width:$Width;
+   & li{height: 40px;width:$Width;margin-bottom: 15px;}
+}
+.nav_btn a{background: image-url('btn-scbaea59a29.png') no-repeat;}
+.nav_bar li a:hover{@include prefixer(transition,all 0.15s 0.2s);width: 137px;}
+.nav_btn.nav_set a{width: 137px;}
+//循环左侧导航hover效果后背景图片定位
+@for $i from 1 through 4{
+  .nav_btn#{$i} a{
+      background-position:(-264+$i*264px)*(-1) 0px ;
+  }
+  .nav_btn#{$i} a:hover{
+      background-position:(-145+$i*264px)*(-1) 0px;
+  }
+}
+@for $i from 1 through 4{
+  .nav_btn#{$i}.nav_set a{
+      background-position:(-145+$i*264px)*(-1) 0px;
+  }
+}
+/*********************二维码************************/
+.two_code{position: absolute;bottom:20px;right: 35px;@extend %clearfix;height: 54px;z-index: 10;
+   >div{@include float();margin-right: 18px;width: 54px;height: 54px;position: relative;z-index: 10;}
+}
+.two_code .share_link{background: $Background-Sprites;height: $Height;width:$Width;cursor:pointer ;}
+.two_code .share_link:hover{width: 166px;height: 106px;}
+.two_code .share_link.updateing{width: 166px;height: 106px;}
+.share_btn1 .share_link{background-position:0px -688px ;}
+.share_btn2 .share_link{background-position:0px -749px ;}
+.share_btn1 .share_link.updateing{background-position:0px -811px ;@include position(-47px,-58px);}
+.share_btn1 .share_link:hover{background-position:0px -811px ;@include position(-47px,-58px);}
+.share_btn2 .share_link:hover{background-position:0px -924px ;position: absolute;top: -47px;right: -23px;z-index: 1000;}
+.share_btn1:hover{z-index: 9;}
+.share_btn2:hover{z-index: 9;}
+.share_nav{width: 110px;height: 24px;@include position(5px,50px);z-index: 100;@extend %clearfix;
+      li{@include float();width: 20px;height: 25px;margin-right: 2px;
+        a{background: image-url('transparent_bg.png') repeat;}
+      }
+   }
+.code_float{@include position(-116px,-32px);width: 112px;height: 171px;background: image-url('code_float_bg.png') no-repeat;display: none;}
+/*********************底部切换按钮************************/
+.footer_btn{position: absolute;bottom:20px;left: 32px;@extend %clearfix;height: 42px;z-index: 10;
+   & div{@include float();margin-right: 20px;width: 107px;height: 32px;}
+}
+.footer_btn a{background: $Background-Sprites;}
+.website_btn a{background-position:0px -1128px ;}
+.diver_btn a{background-position:0px 0px ;}
+.website_btn a:hover{background-position:0px -1168px ;}
+.diver_btn a:hover{background-position:0px -40px ;}
+.footer_btn a:hover{@include prefixer(transition,all 0.35s 0.1s);}
+/*********************版权************************/
+.copyright{width:$Width;position: absolute;bottom:15px;text-align:center;margin-left: -50%;z-index: 9;left: 50%;
+    & p{color:$Color-White;}
+}
+/*********************首页右侧导航************************/
+.home_box{height: auto;top: 250px;position: absolute;right:18px;width: 91px;z-index: 10;}
+.home_bar{width:$Width;}
+.home_nav{width:$Width;
+    & li{height: 20px;width:$Width;margin-bottom: 10px;position:relative;}
+    }
+.home_btn a{background: image-url('btn-s4b7417ebc4.png') no-repeat;background-position:0px -140px ;width: 6px;height: 6px;position: absolute;top: 6px;right: 6px;}
+.home_btn a:hover{width: 91px;height: 20px;@include position();}
+.home_btn.home_set a{width: 91px;height: 20px;@include position();}
+//循环右侧导航hover效果后背景图片定位
+@for $i from 1 through 5{
+  .home_nav#{$i} a:hover{
+      background-position:0px (-28+$i*28px)*(-1);
+  }
+  .home_nav#{$i}.home_set a{
+      background-position:0px (-28+$i*28px)*(-1);
+  }
+}
+
+
+.home_nav1 a:hover{left: 24px;}
+.home_nav1.home_set a{left: 24px;}
+
+
+
+/*********************浮层************************/
+.pop_box_float{
+  @include  pop(0.8);
+  /***********视频浮层*************/
+  .video_float{@include horizontal-vertically-center(700px,500px);display: none;
+    .video_con{width:$Width;height: $Height;}
+    .close_btn{position: absolute;top: -50px;right: -50px;}
+  }
+  /***********活动说明浮层*************/
+  .events_float{@include horizontal-vertically-center(988px,319px);display: none;
+    .events_con{@include position();}
+    .events_btn{position: absolute;top: -80px;right: -102px;}
+  }
+}
+
+/*********************敬请期待页面************************/
+.expect_float{@include horizontal-vertically-center(560px,143px);display: none;background: image-url('expect_bg.png') no-repeat;z-index: 100;
+    .expect_close{position: absolute;top: 15px;right: 25px;
+    }
+}
+
+/*********************提交成功浮层************************/
+.success_float{@extend .expect_float;background: image-url('success_bg.png') no-repeat;  text-align: center;
+    p{@include font-style(36px,$Color-White,null,600);padding-top: 40px;}
+   .success_btn{@extend .expect_close;}
+}
+
+/*********************历届回顾图片浮层************************/
+.history_picfloat{@include horizontal-center(19.5%,59%);display: none;height:61%;
+   .piv_box{width:$Width;height:$Height;@include position();
+      .piv_bar{width:$Width;height:$Height;position: relative;overflow:hidden;
+        .pic_nav{width:$Width;height:$Height; position: relative;overflow:hidden;
+          li{width:$Width;height:$Height;
+              img{width:$Width;height:$Height;}
+          }
+        }
+      }
+     .pic_btn{position:absolute;top:0;right:-37px;}
+     .pic_left_arrow{@include vertically-center(-7%,63px);}
+     .pic_right_arrow{position:absolute;top:50%;right:-7%;margin-top: -32.5px;}
+   }
+}
+/*********************无尽之战浮层************************/
+.station_float{@include horizontal-vertically-center(514px,345px);display: none;
+   .station_bg{@include position();width: $Width;height:$Height;display: none;}
+   .station_box{width: $Width;height: 104px;@include position(240px);@include transparent-background(0.8);
+          p{@include font-style($Font-Size,$Color-White,null);padding-left: 15px;padding-top: 10px;}
+          .pub_station a{width: 80px;height: 30px;background: image-url('btn-sf7bc0a2ad9.png') no-repeat;}
+          .brilliant_btn{@include position(58px,324px);
+            a{background-position: 0px 0px;
+                 &:hover{background-position: -88px 0px;}
+              }
+          }
+          .brilliant_btn.brilliant_set a{background-position: -88px 0px;}
+          .way_btn.brilliant_set a{background-position: -264px 0px;}
+          .way_btn{@include position(58px,418px);
+              a{background-position: -176px 0px;
+                 &:hover{background-position: -264px 0px;}
+               }
+          }
+    }
+   .shut_btn{@include position(12px,458px);}
+   /**********北京站**********/
+   .beijing_bj{background: image-url('station/beijing_img.png') no-repeat;} 
+
+   /**********齐齐哈尔站**********/
+   .qiqihaer_bj{background: image-url('station/qiqihaer_img.png') no-repeat;}
+
+   /**********重庆站**********/
+   .chongqing_bj{background: image-url('station/chongqing_img.png') no-repeat;}
+
+   /**********可可西里站**********/
+   .kekexili_bj{background: image-url('station/kekexili_img.png') no-repeat;}
+
+   /**********济南站**********/
+   .jinan_bj{background: image-url('station/jinan_img.png') no-repeat;}
+
+   /**********石家庄站**********/
+   .shijiazhuang_bj{background: image-url('station/shijiazhuang_img.png') no-repeat;}
+
+    /**********蚌埠站**********/
+   .bengbu_bj{background: image-url('station/bengbu_img.png') no-repeat;}
+
+    /**********榆林站**********/
+   .yulin_bj{background: image-url('station/yulin_img.png') no-repeat;}
+
+   /**********羌塘站**********/
+   .qiangtang_bj{background: image-url('station/qiangtang_img.png') no-repeat;}
+
+  /**********嘉兴站**********/
+  .jiaxing_bj{background: image-url('station/jiaxing_img.png') no-repeat;}
+
+  /**********台州站**********/
+  .taizhou_bj{background: image-url('station/taizhou_img.png') no-repeat;}
+
+}
+
+/*********************参加城市列表浮层************************/
+.city_float{@include horizontal-center(25%,50%);display: none; 
+    img{width: $Width;}
+   .city_btn{@include position(5%,90%);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

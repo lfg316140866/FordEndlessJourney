@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FordEndlessJourney", "http://localhost:48188", "{8A757E5D-D19F-4156-A151-CE3F8E914F19}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/FordEndlessJourney", OFVYAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_48188"
+		Debug.AspNetCompiler.PhysicalPath = "..\FordEndlessJourney\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_48188\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_48188"
+		Release.AspNetCompiler.PhysicalPath = "..\FordEndlessJourney\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_48188\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\FordEndlessJourney\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccWebProject0 = true
+		SccProjectUniqueName0 = http://localhost:48188
+		SccProjectName0 = \u0022$/FordEndlessJourney\u0022,\u0020OFVYAAAA
+		SccLocalPath0 = E:\\lfg\\Item\\Ford\\FordEndlessJourney
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectEnlistmentChoice0 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A757E5D-D19F-4156-A151-CE3F8E914F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A757E5D-D19F-4156-A151-CE3F8E914F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
